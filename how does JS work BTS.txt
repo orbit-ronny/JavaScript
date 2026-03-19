@@ -1,0 +1,53 @@
+// JavaScript Execution Context
+{} -> Global EC  (this ke andar Global EC ko rah diya jaata hai)
+GLobal Execution Context
+Function Execution Context
+Eval Execution Context (Documentations like mongoose)
+
+{} -> Memory [Creation Phase] -> Jagah Allocate Hota hai
+   -> Execution Phase -> = - * / etc execute hota hai 
+
+
+let val1 = 10 
+let val2 = 5
+function addNum(num1, num2){
+    let total = num1 + num2
+    return total
+}
+let result1 = addNum(val1, val2)
+let result2 = addNum(10, 2)
+
+Step 1 -> Global Execution or Environment
+// jo bhi code run karna hai vo Global Execution se run hota hai aur isko sabse pehle allocate karte hai "this" me 
+
+step 2 -> Memory Phase 
+// saare variables ko ikkatha kiya jaata hai aur sirf rakha jaata hai 
+val1 -> undefined
+val2 -> undefined
+addNum -> defination //function ka defination
+result1 -> undefined
+result2 -> undefined 
+
+step 3 -> Execution Phase
+val1 -> 10
+val2 -> 5
+addNum --------------------------------------------->                                            (new variable environment + execution thread) -> delete
+result1 =15
+result2 =                                                           |                           |
+                                                            v                           v
+                                                    Memory Phase                 Execution Context
+                                                    val1 -> undefined            num1 -> 10
+                                                    val2 -> undefined            num2 -> 5
+                                                    total -> undefined           total-> 15  // total return ho jayega global execution mein
+
+// Again process 
+[NEW VARIABLE ENVIRONMENT + THREAD ] -> Memory Phase
+                                     -> Execution Phase
+
+
+// Call Stack 
+
+|    three()      |    LIFO -> LAST IN FIRST OUT 
+|     two()       |
+|     one()       |
+| Global Execution|   
