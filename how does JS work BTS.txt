@@ -7,7 +7,6 @@ Eval Execution Context (Documentations like mongoose)
 {} -> Memory [Creation Phase] -> Jagah Allocate Hota hai
    -> Execution Phase -> = - * / etc execute hota hai 
 
-
 let val1 = 10 
 let val2 = 5
 function addNum(num1, num2){
